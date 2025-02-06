@@ -1,0 +1,380 @@
+html, body {
+  overflow-x: hidden !important;
+}
+
+
+
+/*--------------------Tipografias-----------------------*/
+
+.lexend {
+  font-family: "Lexend", sans-serif;
+}
+
+.inter {
+  font-family: "Inter Tight", sans-serif;
+}
+
+.geologica {
+  font-family: "Geologica", sans-serif;
+}
+
+
+html, body {
+  font-size: 15px;
+}
+/*---------------Animaciones-------------------------------------------------------*/
+
+.animated-button {
+    position: relative;
+    color: #000;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 10;
+  }
+
+  .animated-button.qawhite::before, .animated-button.qawhite::after {
+    border-color: #fff;
+  }
+  
+  .animated-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-top: 2px solid;
+    border-left:2px solid;
+    border-bottom: 2px solid;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-color: #1d1d1d;
+    transform: translateX(0.2%) translateY(-50%);
+    z-index: 0;
+  }
+  .animated-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    border-top: 2px solid;
+    border-right:2px solid;
+    border-bottom: 2px solid;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-color: #1d1d1d;
+    transform: translateX(-.2%) translateY(-50%);
+    z-index: 0;
+  }
+
+  .animated-button:hover {
+    color: #fff;
+  }
+  .animated-button:hover::before, .animated-button:hover::after {
+    animation: shrinkBorder 0.6s ease forwards;
+    animation-delay: 150ms;
+  }
+
+  @keyframes shrinkBorder {
+    0% {
+      width: 50%;
+      height: 100%;
+      opacity: 1;
+    }
+    50% {
+      width: 0;
+      height: 100%;
+      opacity: 1;
+    }
+    100% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+  }
+
+  .fade {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }  
+
+  .up {
+    transform: translateY(100px);
+  }
+  .left {
+    transform: translateX(-100px);
+  }
+  .right {
+    transform: translateX(100px);
+  }
+  .down {
+    transform: translateY(-100px);
+  }
+  .in {
+    transform: translate(0);
+  }
+  .fade.up.show, .fade.left.show, .fade.right.show, .fade.down.show {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+
+.animation-d-200 {
+  transition-delay: 200ms !important;
+}
+
+.animation-d-400 {
+  transition-delay: 400ms !important;
+}
+
+.speed-button {
+    background-image: url('/giphy.webp'); 
+    background-size: cover; 
+    background-position: center; 
+    overflow: hidden;
+    background-color: rgba(31,31,31,1);
+    background-blend-mode:multiply;
+    transition: all 0.6s ease;
+}
+
+.speed-button:hover {
+  background-color: rgba(31,31,31,0.2);
+}
+
+.btn-grow-box {
+  background: transparent; /* color de fondo */
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  
+}
+.btn-grow-box:hover {
+  color: #fff;/* color de fuente hover */
+}
+
+.btn-grow-box.qaorange::after {
+  background-color: #FE904C;
+}
+
+.btn-grow-box.qablack::after {
+  background-color: #1d1d1d;
+}
+
+.btn-grow-box::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0);
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+.btn-grow-box:hover::after {
+  transition: all 0.3s ease-out;
+  transform: scale(1, 1);
+}
+
+
+
+/*------------------------Clases Home Page------------------------------------*/
+
+.service-icon {
+  box-shadow: inset 0px -3px 3px 0px #F4F4F4, inset 0px 3px 3px 0px #F4F4F4, -2px 2px 3px 0px rgba(51, 51, 51, 0.12);
+}
+
+.linear-ease .swiper-wrapper {
+  transition-timing-function: linear !important; /* Cambia la función de tiempo a 'ease' */
+}
+
+.image-shadow {
+  border-radius: 15px;
+border: 1px solid #EEEBEB;
+background: #FFF;
+box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+}
+
+.orange-dot::marker {
+  color: #FE904C;
+}
+
+
+
+/*-----------------------*/
+
+/* Contenedor para el elemento giratorio */
+
+/* Animación de rotación lenta */
+.animate-spin-slow {
+  display: inline-block;
+  animation: spin 8s linear infinite; /* Rota en 8 segundos, de forma continua */
+  animation-direction: reverse !important;
+}
+
+/* Definimos la animación @keyframes para la rotación */
+@keyframes spin {
+  from {
+    transform: rotate(0deg); /* Empieza desde 0 grados */
+  }
+  to {
+    transform: rotate(360deg); /* Termina en 360 grados */
+  }
+}
+
+/* Estilos para el texto circular */
+.circular-text {
+  position: relative;
+  width: 200px; /* Ajusta el tamaño del círculo */
+  height: 200px;
+  background-image: url('/orange-cicle.png');
+}
+
+.circular-text span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-origin: 0 100px; /* Ajusta la posición para colocar las letras alrededor del círculo */
+  white-space: nowrap;
+}
+
+.divider {
+  margin: 0;
+  direction: ltr;
+}
+
+li.bullet-qaorange::marker {
+  color: #FE904C;
+}
+
+.webkit-center-left {
+  text-align: -webkit-left !important;
+}
+
+.webkit-center {
+  text-align: -webkit-center !important;
+}
+
+.faq {
+  max-height: 0px;
+  overflow: hidden;
+  transition: all ease 0.3s;
+
+}
+.expanded {
+  max-height: 300px;
+}
+
+.rotate-x-90 {
+  transform: rotateX(90deg);
+}
+
+
+ul.list-marker {
+  list-style-type: none; /* Oculta el marcador predeterminado */
+}
+
+ul.list-marker li {
+  background-image: url('marker.svg');
+  background-repeat: no-repeat;
+  background-size: 16px 16px; /* Ajusta el tamaño del SVG */
+  padding-left: 24px; /* Da espacio para el SVG */
+  background-position: 0 50%; /* Ajusta la posición vertical */
+}
+
+ul.list-marker.qaorange li {
+  background-image: url('marker-orange.svg') !important;
+}
+
+.tilt-card {
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.thumb-button {
+  background-size: cover;
+  background-position: center;
+}
+
+.vision {
+    background-image: url('/vision-background.webp');
+    background-position: center;
+    background-size: cover; 
+}
+
+.webkit-center-right {
+  text-align: -webkit-right;
+}
+
+.texto-vertical {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+.fill-qaorange {
+  fill: #FE904C;
+}
+
+.fill-qablack {
+  fill: #1d1d1d;
+}
+
+.pagination-circles .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  margin: 0px 3px;
+  background-color: #c9c9c9;
+}
+
+.pagination-circles .swiper-pagination-bullet-active {
+  background-color: #FE904C;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+@media (max-width:767px) {
+  .webkit-center-left {
+    text-align: -webkit-center !important;
+  }
+
+  .webkit-center-right {
+    text-align: -webkit-center !important;
+  }
+}

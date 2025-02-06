@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, html {
+    font-family: "Inter Tight", sans-serif;
+    color: #1d1d1d;
+    overflow-x: hidden !important;
+}
+
+:root {
+    overflow-x: hidden !important;
+  }
+  
